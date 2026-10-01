@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | Supra Ghina</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="adm">
+
+  <!-- ============ LOGIN / PEMBUATAN ADMIN PERTAMA ============ -->
+  <div class="adm-auth" id="authView" hidden>
+    <div class="adm-auth__box">
+      <div class="adm-brand adm-brand--auth"><span class="brand__logo" aria-hidden="true">SG</span><span>SUPRA GHINA Admin</span></div>
+      <div class="adm-notice adm-notice--warn" role="note">
+        <strong>Mode prototype.</strong> Login ini hanya mengunci tampilan di browser ini dan
+        <strong>bukan keamanan sungguhan</strong>. Jangan memasukkan data sensitif sebelum backend tersedia.
+      </div>
+      <div id="authForm"></div>
+    </div>
+  </div>
+
+  <!-- ============ APLIKASI ADMIN ============ -->
+  <div class="adm-app" id="appView" hidden>
+    <aside class="adm-side" id="side" aria-label="Menu admin">
+      <div class="adm-brand"><span class="brand__logo" aria-hidden="true">SG</span><span>Supra Ghina</span></div>
+      <nav class="adm-nav" id="adminNav">
+        <a href="#/dashboard" data-route="dashboard">Dashboard</a>
+        <a href="#/produk" data-route="produk">Produk</a>
+        <a href="#/stok" data-route="stok">Stok</a>
+        <a href="#/promo" data-route="promo">Promo</a>
+        <a href="#/transaksi" data-route="transaksi">Transaksi</a>
+        <a href="#/operasional" data-route="operasional">Operasional Toko</a>
+        <a href="#/laporan" data-route="laporan">Laporan</a>
+        <a href="#/pengaturan" data-route="pengaturan">Pengaturan</a>
+      </nav>
+      <div class="adm-side__foot">
+        <p class="adm-user" id="userInfo"></p>
+        <button type="button" class="btn btn--ghost adm-btn-sm" data-aksi="logout">Keluar</button>
+      </div>
+    </aside>
+    <div class="adm-scrim" id="scrim" hidden></div>
+
+    <div class="adm-main">
+      <header class="adm-top">
+        <button type="button" class="adm-menu-btn" id="sideToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="side">
+          <span></span><span></span><span></span>
+        </button>
+        <h1 id="pageTitle">Dashboard</h1>
+        <a class="adm-link" href="../index.html" target="_blank" rel="noopener">Lihat website</a>
+      </header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <dialog class="adm-modal" id="modal"></dialog>
+  <div class="adm-toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/status-engine.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
